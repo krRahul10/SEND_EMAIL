@@ -1,5 +1,7 @@
 const express = require("express");
+
 const router = new express.Router();
+
 const nodemailer = require("nodemailer");
 
 router.post("/register", async (req, res) => {
