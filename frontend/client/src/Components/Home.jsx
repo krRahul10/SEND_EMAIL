@@ -5,15 +5,15 @@ import { useState } from "react";
 
 const Home = () => {
   const [email, setEmail] = useState("");
-  console.log(email);
+  // console.log(email);
 
-  const sendEmail = async (e) => {
+  const sendEmail = async(e) => {
     e.preventDefault();
 
-    const res = await fetch("/register",{
+    const res = await fetch("http://localhost:8006/register",{
         method:"POST",
         headers:{
-            "Content-Type":"application"
+            "Content-Type":"application/json"
         },
         body:JSON.stringify({email})
     })
@@ -48,7 +48,7 @@ const Home = () => {
               </Form.Text>
             </Form.Group>
 
-            <Button variant="warning" type="submit" onClick={()=>sendEmail}>
+            <Button variant="warning" type="submit" onClick={sendEmail}>
               SEND
             </Button>
           </Form>
